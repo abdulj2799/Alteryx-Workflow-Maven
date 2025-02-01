@@ -1,0 +1,716 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AlteryxDocument yxmdVer="2022.3">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="402" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">Main Course Support Files\Datasets\Credit Card Fees.xlsx|||`Sheet1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Credit Card Fees.xlsx
+Query=`Sheet1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Card" size="255" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\Credit Card Fees.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Fee" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\Credit Card Fees.xlsx|||`Sheet1$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="474" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="creditcardtype" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Card" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Card" selected="False" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="transactionid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="creditcardnumber" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="customerid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="transactiondate" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="creditcardtype" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="locationid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="rootbeerid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="purchaseprice" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="Double" />
+            <Field name="brandid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeer.csv" type="V_String" />
+            <Field name="wholesalecost" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="transactionid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="creditcardnumber" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="customerid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="transactiondate" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="creditcardtype" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="locationid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="rootbeerid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="purchaseprice" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="Double" />
+            <Field name="brandid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeer.csv" type="V_String" />
+            <Field name="wholesalecost" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Double" />
+            <Field name="Fee" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\Credit Card Fees.xlsx|||`Sheet1$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Card" size="255" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\Credit Card Fees.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Fee" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\Credit Card Fees.xlsx|||`Sheet1$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="570" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>creditcardtype</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2023-01-09 21:21:31</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>Visa</Operand>
+              <StartDate>2023-01-09 21:21:31</StartDate>
+              <EndDate>2023-01-09 21:21:31</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[creditcardtype] = "Visa"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="transactionid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="creditcardnumber" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="customerid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="transactiondate" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="creditcardtype" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="locationid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="rootbeerid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="purchaseprice" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="Double" />
+            <Field name="brandid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeer.csv" type="V_String" />
+            <Field name="wholesalecost" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Double" />
+            <Field name="Fee" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\Credit Card Fees.xlsx|||`Sheet1$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="transactionid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="creditcardnumber" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="customerid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="transactiondate" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="creditcardtype" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="locationid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="rootbeerid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="purchaseprice" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="Double" />
+            <Field name="brandid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeer.csv" type="V_String" />
+            <Field name="wholesalecost" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Double" />
+            <Field name="Fee" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\Credit Card Fees.xlsx|||`Sheet1$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="378" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="purchaseprice" selected="True" type="Double" size="8" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="transactionid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="creditcardnumber" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="customerid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="transactiondate" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="creditcardtype" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="locationid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="rootbeerid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="purchaseprice" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="Double" />
+            <Field name="brandid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeer.csv" type="V_String" />
+            <Field name="wholesalecost" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="186" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="brandid" selected="True" type="V_String" size="19" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="brandid" size="19" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="V_String" />
+            <Field name="brandname" size="255" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="V_String" />
+            <Field name="firstbrewedyear" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Double" />
+            <Field name="breweryname" size="255" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="V_String" />
+            <Field name="city" size="255" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="V_String" />
+            <Field name="state" size="255" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="V_String" />
+            <Field name="country" size="255" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="V_String" />
+            <Field name="description" size="263" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="V_WString" />
+            <Field name="canesugar" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Bool" />
+            <Field name="cornsyrup" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Bool" />
+            <Field name="honey" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Bool" />
+            <Field name="artificialsweetener" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Bool" />
+            <Field name="caffeinated" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Bool" />
+            <Field name="alcoholic" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Bool" />
+            <Field name="availableincans" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Bool" />
+            <Field name="availableinbottles" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Bool" />
+            <Field name="availableinkegs" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Bool" />
+            <Field name="website" size="255" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="V_String" />
+            <Field name="facebookpage" size="255" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="V_String" />
+            <Field name="twitter" size="255" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="V_String" />
+            <Field name="wholesalecost" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Double" />
+            <Field name="currentretailprice" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="186" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="rootbeerid" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="rootbeerid" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_rootbeerid" selected="False" rename="Right_rootbeerid" input="Right_" />
+                <SelectField field="Right_containertype" selected="False" input="Right_" />
+                <SelectField field="Right_locationid" selected="False" rename="Right_locationid" input="Right_" />
+                <SelectField field="Right_purchasedate" selected="False" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="transactionid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="creditcardnumber" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="customerid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="transactiondate" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="creditcardtype" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="locationid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="rootbeerid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="purchaseprice" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="transactionid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="creditcardnumber" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="customerid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="transactiondate" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="creditcardtype" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="locationid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="rootbeerid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="purchaseprice" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="brandid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeer.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="rootbeerid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeer.csv" type="V_String" />
+            <Field name="brandid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeer.csv" type="V_String" />
+            <Field name="containertype" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeer.csv" type="V_String" />
+            <Field name="locationid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeer.csv" type="V_String" />
+            <Field name="purchasedate" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeer.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="690" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[purchaseprice] - (([purchaseprice]*[Fee])+[wholesalecost])" field="Profit" size="8" type="Double" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Profit = [purchaseprice] - (([purchaseprice]*[Fee])+[wholesalecost])
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="transactionid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="creditcardnumber" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="customerid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="transactiondate" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="creditcardtype" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="locationid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="rootbeerid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="purchaseprice" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="Double" />
+            <Field name="brandid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeer.csv" type="V_String" />
+            <Field name="wholesalecost" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Double" />
+            <Field name="Fee" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\Credit Card Fees.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Profit" source="Formula: [purchaseprice] - (([purchaseprice]*[Fee])+[wholesalecost])" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="810" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="creditcardtype" action="GroupBy" rename="creditcardtype" />
+            <SummarizeField field="purchaseprice" action="Sum" rename="Revenue" />
+            <SummarizeField field="Profit" action="Sum" rename="Sum_Profit" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="creditcardtype" size="254" source="Summarize: GroupBy - creditcardtype" type="V_String" />
+            <Field name="Revenue" source="Summarize: Sum - purchaseprice" type="Double" />
+            <Field name="Sum_Profit" source="Summarize: Sum - Profit" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="282" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="brandid" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="brandid" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_transactionid" selected="True" input="Left_" />
+                <SelectField field="Left_creditcardnumber" selected="True" input="Left_" />
+                <SelectField field="Left_customerid" selected="True" input="Left_" />
+                <SelectField field="Left_transactiondate" selected="True" input="Left_" />
+                <SelectField field="Left_creditcardtype" selected="True" input="Left_" />
+                <SelectField field="Left_locationid" selected="True" input="Left_" />
+                <SelectField field="Left_rootbeerid" selected="True" input="Left_" />
+                <SelectField field="Left_purchaseprice" selected="True" input="Left_" />
+                <SelectField field="Left_brandid" selected="True" input="Left_" />
+                <SelectField field="Right_wholesalecost" selected="True" input="Right_" />
+                <SelectField field="Right_brandid" selected="False" rename="Right_brandid" input="Right_" />
+                <SelectField field="Right_brandname" selected="False" input="Right_" />
+                <SelectField field="Right_firstbrewedyear" selected="False" input="Right_" />
+                <SelectField field="Right_breweryname" selected="False" input="Right_" />
+                <SelectField field="Right_city" selected="False" input="Right_" />
+                <SelectField field="Right_state" selected="False" input="Right_" />
+                <SelectField field="Right_country" selected="False" input="Right_" />
+                <SelectField field="Right_description" selected="False" input="Right_" />
+                <SelectField field="Right_canesugar" selected="False" input="Right_" />
+                <SelectField field="Right_cornsyrup" selected="False" input="Right_" />
+                <SelectField field="Right_honey" selected="False" input="Right_" />
+                <SelectField field="Right_artificialsweetener" selected="False" input="Right_" />
+                <SelectField field="Right_caffeinated" selected="False" input="Right_" />
+                <SelectField field="Right_alcoholic" selected="False" input="Right_" />
+                <SelectField field="Right_availableincans" selected="False" input="Right_" />
+                <SelectField field="Right_availableinbottles" selected="False" input="Right_" />
+                <SelectField field="Right_availableinkegs" selected="False" input="Right_" />
+                <SelectField field="Right_website" selected="False" input="Right_" />
+                <SelectField field="Right_facebookpage" selected="False" input="Right_" />
+                <SelectField field="Right_twitter" selected="False" input="Right_" />
+                <SelectField field="Right_currentretailprice" selected="False" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="transactionid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="creditcardnumber" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="customerid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="transactiondate" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="creditcardtype" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="locationid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="rootbeerid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="purchaseprice" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="brandid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeer.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="transactionid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="creditcardnumber" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="customerid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="transactiondate" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="creditcardtype" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="locationid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="rootbeerid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="purchaseprice" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\transaction.csv" type="V_String" />
+            <Field name="brandid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeer.csv" type="V_String" />
+            <Field name="wholesalecost" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="brandid" size="19" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="V_String" />
+            <Field name="brandname" size="255" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="V_String" />
+            <Field name="firstbrewedyear" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Double" />
+            <Field name="breweryname" size="255" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="V_String" />
+            <Field name="city" size="255" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="V_String" />
+            <Field name="state" size="255" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="V_String" />
+            <Field name="country" size="255" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="V_String" />
+            <Field name="description" size="263" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="V_WString" />
+            <Field name="canesugar" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Bool" />
+            <Field name="cornsyrup" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Bool" />
+            <Field name="honey" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Bool" />
+            <Field name="artificialsweetener" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Bool" />
+            <Field name="caffeinated" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Bool" />
+            <Field name="alcoholic" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Bool" />
+            <Field name="availableincans" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Bool" />
+            <Field name="availableinbottles" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Bool" />
+            <Field name="availableinkegs" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Bool" />
+            <Field name="website" size="255" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="V_String" />
+            <Field name="facebookpage" size="255" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="V_String" />
+            <Field name="twitter" size="255" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="V_String" />
+            <Field name="wholesalecost" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Double" />
+            <Field name="currentretailprice" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Datasets\Root Beer\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">Main Course Support Files\Datasets\rootbeerbrand.xlsx|||`rootbeerbrand$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>rootbeerbrand.xlsx
+Query=`rootbeerbrand$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="brandid" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Double" />
+            <Field name="brandname" size="255" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="V_String" />
+            <Field name="firstbrewedyear" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Double" />
+            <Field name="breweryname" size="255" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="V_String" />
+            <Field name="city" size="255" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="V_String" />
+            <Field name="state" size="255" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="V_String" />
+            <Field name="country" size="255" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="V_String" />
+            <Field name="description" size="263" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="V_WString" />
+            <Field name="canesugar" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Bool" />
+            <Field name="cornsyrup" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Bool" />
+            <Field name="honey" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Bool" />
+            <Field name="artificialsweetener" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Bool" />
+            <Field name="caffeinated" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Bool" />
+            <Field name="alcoholic" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Bool" />
+            <Field name="availableincans" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Bool" />
+            <Field name="availableinbottles" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Bool" />
+            <Field name="availableinkegs" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Bool" />
+            <Field name="website" size="255" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="V_String" />
+            <Field name="facebookpage" size="255" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="V_String" />
+            <Field name="twitter" size="255" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="V_String" />
+            <Field name="wholesalecost" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Double" />
+            <Field name="currentretailprice" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\rootbeerbrand.xlsx|||`rootbeerbrand$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">Main Course Support Files\Datasets\transaction.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>transaction.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="transactionid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\transaction.csv" type="V_String" />
+            <Field name="creditcardnumber" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\transaction.csv" type="V_String" />
+            <Field name="customerid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\transaction.csv" type="V_String" />
+            <Field name="transactiondate" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\transaction.csv" type="V_String" />
+            <Field name="creditcardtype" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\transaction.csv" type="V_String" />
+            <Field name="locationid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\transaction.csv" type="V_String" />
+            <Field name="rootbeerid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\transaction.csv" type="V_String" />
+            <Field name="purchaseprice" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\transaction.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">Main Course Support Files\Datasets\rootbeer.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>rootbeer.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="rootbeerid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\rootbeer.csv" type="V_String" />
+            <Field name="brandid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\rootbeer.csv" type="V_String" />
+            <Field name="containertype" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\rootbeer.csv" type="V_String" />
+            <Field name="locationid" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\rootbeer.csv" type="V_String" />
+            <Field name="purchasedate" size="254" source="File: C:\Users\dusti\Documents\Maven Local Files\Alteryx - Up &amp; Running\Main Course Support Files\Datasets\rootbeer.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="2" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Join" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="True" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="9" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Join" />
+      <Destination ToolID="9" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Join" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="6" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="6" Connection="Right" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Alteryx_Batch_Macro_Pre_Flow</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="73a0c853-9b47-4bf5-9b4b-d3a19aa1760d" />
+      <Telemetry>
+        <PreviousWorkflowId value="e14e8259-e5bc-4ed6-806e-b02339024806" />
+        <OriginWorkflowId value="e14e8259-e5bc-4ed6-806e-b02339024806" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
